@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head>
+        <title>
+            YumBook! -
+            {% block title_block %}
+
+            {% endblock %}
+        </title>
+    </head>
+
+    <body>
+        <a href="{% url 'yum:index' %}">Index</a>
+        <a href="{% url 'yum:about' %}">About</a>
+        <a href="{% url 'yum:contact' %}">Contact</a>
+        <a href="{% url 'yum:privacy' %}">Privacy</a>
+        <div>
+        {% block body_block %}
+        {% endblock %}
+        </div>
+    </body>
+</html>
