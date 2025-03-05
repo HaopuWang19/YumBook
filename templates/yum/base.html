@@ -9,9 +9,20 @@
 
             {% endblock %}
         </title>
+
     </head>
 
     <body>
+        <div>
+            navigation bar
+        </div>
+
+        <div>
+            body
+            <div>
+                page foot
+            </div>
+        </div>
         <a href="{% url 'yum:index' %}">Index</a>
         <a href="{% url 'yum:about' %}">About</a>
         <a href="{% url 'yum:contact' %}">Contact</a>

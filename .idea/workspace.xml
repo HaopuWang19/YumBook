@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4766188-796e-42c6-b2b7-105a05c43582" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/yum/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/yum/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/yum/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/yum/privacy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yum/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/YumBook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/YumBook.iml" afterDir="false" />
+    <list default="true" id="b4766188-796e-42c6-b2b7-105a05c43582" name="Changes" comment="project initialized.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YumBook/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/YumBook/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YumBook/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/YumBook/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/yum/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/yum/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yum/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/yum/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yum/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/yum/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yum/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/yum/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yum/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yum/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,18 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "HaopuWang19"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HaopuWang19&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/HaopuWang19/YumBook.git",
-    "accountId": "4ab0404a-f8cb-4a7f-9f79-6a8befea5712"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/HaopuWang19/YumBook.git&quot;,
+    &quot;accountId&quot;: &quot;4ab0404a-f8cb-4a7f-9f79-6a8befea5712&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -60,21 +48,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/24142/Documents/UofG/Sem2/WebScience/Lab/130125&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="YumBook" type="Python.DjangoServer" factoryName="Django server">
       <module name="YumBook" />
@@ -118,11 +107,26 @@
       <option name="presentableId" value="Default" />
       <updated>1739974390195</updated>
       <workItem from="1739974391374" duration="3660000" />
-      <workItem from="1739986764138" duration="3569000" />
+      <workItem from="1739986764138" duration="3659000" />
+      <workItem from="1740110386639" duration="248000" />
+      <workItem from="1741188915018" duration="910000" />
     </task>
+    <task id="LOCAL-00001" summary="project initialized.">
+      <option name="closed" value="true" />
+      <created>1739990418851</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739990418851</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="project initialized." />
+    <option name="LAST_COMMIT_MESSAGE" value="project initialized." />
   </component>
 </project>
