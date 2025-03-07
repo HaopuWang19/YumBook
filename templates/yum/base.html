@@ -21,9 +21,9 @@
                     img
                 </div>
                 <ul class="nav-bar-items">
-                    <li><a href="{% url 'yum:index' %}">Hall</a></li>
-                    <li><a href="{% url 'yum:add_food' %}">Post</a></li>
-                    <li><a href="{% url 'yum:profile' %}">My Info</a></li>
+                    <li style="width:100px;"><a href="{% url 'yum:index' %}">Hall</a></li>
+                    <li style="width:100px;"><a href="{% url 'yum:add_food' %}">Post</a></li>
+                    <li style="width:100px;"><a href="{% url 'yum:profile' %}">My Info</a></li>
                 </ul>
                 <div class="user">
                     Please log in
@@ -32,11 +32,9 @@
             </div>
 
             <div class="content-body">
-                body
                 {% block body_block %}
                 {% endblock %}
                 <div id="page-foot-base">
-                    page foot
                     <div style="height:100px;"></div>
                     <ul class="footer-links" style="">
                         <li><a href="{% url 'yum:about' %}">About</a></li>

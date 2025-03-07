@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4766188-796e-42c6-b2b7-105a05c43582" name="Changes" comment="project uplaod 1">
-      <change afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/yum/addFood.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/yum/profile.html" afterDir="false" />
+    <list default="true" id="b4766188-796e-42c6-b2b7-105a05c43582" name="Changes" comment="base style commit 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/yum/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/yum/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yum/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/yum/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yum/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yum/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +112,7 @@
       <workItem from="1739974391374" duration="3660000" />
       <workItem from="1739986764138" duration="3659000" />
       <workItem from="1740110386639" duration="248000" />
-      <workItem from="1741188915018" duration="8993000" />
+      <workItem from="1741188915018" duration="10355000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized.">
       <option name="closed" value="true" />
@@ -135,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741189854824</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="base style commit 1">
+      <option name="closed" value="true" />
+      <created>1741375932739</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741375932739</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +147,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project initialized." />
     <MESSAGE value="project uplaod 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="project uplaod 1" />
+    <MESSAGE value="base style commit 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="base style commit 1" />
   </component>
 </project>
