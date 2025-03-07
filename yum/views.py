@@ -17,3 +17,9 @@ def privacy(request):
 
 def contact(request):
     return render(request, 'yum/contact.html', context={})
+
+def add_food(request):
+    return render(request, 'yum/addFood.html', context={})
+
+def profile(request):
+    return render(request, 'yum/profile.html', context={})

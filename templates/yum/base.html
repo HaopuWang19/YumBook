@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 
-<html>
+<html lang="en">
     <head>
         <title>
             YumBook! -
@@ -9,27 +9,42 @@
 
             {% endblock %}
         </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 
     </head>
 
     <body>
-        <div>
-            navigation bar
-        </div>
+    <div class="container">
+            <div class="nav-base">
 
-        <div>
-            body
-            <div>
-                page foot
+                <div class="yum-img">
+                    img
+                </div>
+                <ul class="nav-bar-items">
+                    <li><a href="{% url 'yum:index' %}">Hall</a></li>
+                    <li><a href="{% url 'yum:add_food' %}">Post</a></li>
+                    <li><a href="{% url 'yum:profile' %}">My Info</a></li>
+                </ul>
+                <div class="user">
+                    Please log in
+                </div>
+
             </div>
-        </div>
-        <a href="{% url 'yum:index' %}">Index</a>
-        <a href="{% url 'yum:about' %}">About</a>
-        <a href="{% url 'yum:contact' %}">Contact</a>
-        <a href="{% url 'yum:privacy' %}">Privacy</a>
-        <div>
-        {% block body_block %}
-        {% endblock %}
-        </div>
+
+            <div class="content-body">
+                body
+                {% block body_block %}
+                {% endblock %}
+                <div id="page-foot-base">
+                    page foot
+                    <div style="height:100px;"></div>
+                    <ul class="footer-links" style="">
+                        <li><a href="{% url 'yum:about' %}">About</a></li>
+                        <li><a href="{% url 'yum:contact' %}">Contact</a></li>
+                        <li><a href="{% url 'yum:privacy' %}">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
     </body>
 </html>

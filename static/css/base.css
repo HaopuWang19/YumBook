@@ -1,0 +1,75 @@
+.html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-base {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 70px;
+    background-color: #FFDE59;
+
+    margin: 0;
+}
+
+.yum-img{
+    width:15%;
+    padding-left: 50px;
+    text-align: left;
+}
+
+.nav-bar-items{
+    width:70%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.user{
+    width: 15%;
+    text-align: right;
+    padding-right: 50px;
+}
+
+
+.content-body {
+    width: 70%;  /* 70% 居中 */
+    margin: 0 auto; /* 左右自动居中 */
+    background-color: #f9f9f9; /* 浅色背景，增强可视效果 */
+    padding: 20px; /* 增加内边距 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 可选：增加阴影 */
+}
+
+#page-foot-base {
+    text-align: center; /* 让页脚文字和链接居中 */
+    margin-top: 20px; /* 让页脚与内容区隔开 */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li a{
+    text-decoration: none;
+    color: #007bff; /* 让链接有颜色 */
+}
