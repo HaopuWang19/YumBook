@@ -1,0 +1,57 @@
+{% extends 'yum/base.html' %}
+{% load static %}
+
+
+{% block title_block %}
+    Recipe Detail
+{% endblock %}
+
+{% block extra_file_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+{% endblock %}
+
+{% block body_block %}
+    <h1>{{ recipe.title }}</h1>
+    <div class="recipe-info">
+        <p><strong>Author:</strong> {{ recipe.author.user.username }}</p>
+        <p><strong>Posted:</strong>{{ formatted_time }}</p>
+        <p><strong>Cuisine:</strong>{% for c in recipe.cuisine.all %}{{ c.name }}{% endfor %}</p>
+        <p><strong>Meal Type:</strong>{% for m in recipe.meal_type.all %}{{ m.name }}{% endfor %}</p>
+        <p><strong>Ingredients:</strong>{{ recipe.ingredients }}</p>
+        <p><strong>Description & Steps:</strong>{{ recipe.description }}</p>
+
+        <div class="recipe-images">
+            {% if recipe.images %}
+                <img src="{{ recipe.images.url }}" alt="Recipe Image">
+            {% else %}
+                <img src="{% static 'images/default.jpg' %}" alt="Default Image">
+            {% endif %}
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>Comments</h2>
+    {% if user.is_authenticated %}
+        <form method="post">
+            {% csrf_token %}
+            {{ comment_form.text }}
+            <button type="submit">Post Comment</button>
+        </form>
+    {% else %}
+        <p><a href="{% url 'yum:login' %}">Log in</a> to comment.</p>
+    {% endif %}
+
+    <hr>
+
+    <ul class="comment-list">
+        {% for comment in comments %}
+            <li>
+                <p><strong>{{ comment.author.user.username }}</strong>{{ comment.created_at|date:"Y-m-d H:i" }}</p>
+                <p>{{ comment.text }}</p>
+            </li>
+        {% empty %}
+            <li>No comments yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

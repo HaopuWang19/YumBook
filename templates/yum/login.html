@@ -1,0 +1,28 @@
+{% extends 'yum/base.html' %}
+{% load static %}
+
+
+{% block title_block %}
+    Login
+{% endblock %}
+
+{% block extra_file_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block body_block %}
+    <h1 style="text-align: center;">Login</h1>
+    <div class="login-container">
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+
+        <p>Don't have an account? <a href="{% url 'yum:register' %}">Register here</a></p>
+    </div>
+{% endblock %}

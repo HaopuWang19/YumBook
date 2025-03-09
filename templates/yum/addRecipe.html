@@ -1,0 +1,37 @@
+{% extends 'yum/base.html' %}
+{% load static %}
+
+
+{% block title_block %}
+    Add Food
+{% endblock %}
+
+{% block extra_file_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/addRecipe.css' %}">
+{% endblock %}
+
+{% block body_block %}
+    <div>
+            <h1>{% if is_edit %}Edit Recipe {% else %}Add a New Recipe{% endif %}</h1>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="id_title">Title:</label>
+                {{ form.title }}
+                <label>Cuisine:</label>
+                {{ form.cuisine }}
+                <label>Meal Type:</label>
+                {{ form.meal_type }}
+                <label for="id_ingredients">Ingredients:</label>
+                {{ form.ingredients }}
+                <label for="id_description">Description&Steps:</label>
+                {{ form.description }}
+                <label for="id_images">Upload Images (max 20):</label>
+                {{ form.images }}
+
+                <button type="submit">{% if is_edit %}Save Changes{% else %}Post Recipe{% endif %}</button>
+                {% if is_edit %}
+                    <a href="{% url 'yum:profile' user_id=request.user.userprofile.user_id %}">Cancel</a>
+                {% endif %}
+            </form>
+    </div>
+{% endblock %}

@@ -3,11 +3,47 @@
 
 
 {% block title_block %}
-    Contact
+    Profile
 {% endblock %}
 
-
+{% block extra_file_block %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+{% endblock %}
 
 {% block body_block %}
-    <h1>this is profile page.</h1>
+    <div class="profile-container">
+        {% if user_profile %}
+
+            <div class="profile">
+                <p class="username">{{ user_profile.user.username }}</p>
+                <p class="email">{{ user_profile.user.email }}</p>
+            </div>
+
+            <hr class="divider">
+
+            <div class="posts">
+                <h2>My Posts</h2>
+                {% for post in posts %}
+                    <li class="post-item">
+                        <span class="post-title">{{ post.title|slice:":20" }}...</span>
+                        <div class="post-actions">
+                            <a href="{% url 'yum:edit_recipe' recipe_id=post.recipe_id %}" class="edit-btn">Edit</a>
+                            <a href="{% url 'yum:delete_recipe' recipe_id=post.recipe_id %}" class="delete-btn"
+                            onclick="return confirm('Are you sure you want to delete this recipe?');">Delete</a>
+                        </div>
+                    </li>
+                {% empty %}
+                    <li>You don't have any post yet.</li>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="not-logged-in">
+                <h2>Please login first.</h2>
+                <a href="{% url 'yum:login' %}">Log in</a>
+                <p>Have no account?
+                    <a href="{% url 'yum:register' %}">Go register</a>
+                </p>
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

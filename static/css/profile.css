@@ -1,0 +1,91 @@
+.profile-container {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 个人信息部分 */
+.profile {
+    height: 100px; /* 固定高度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平居中 */
+    justify-content: center; /* 垂直居中 */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 分割线 */
+.divider {
+    border: none;
+    height: 2px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+/* 帖子列表 */
+.posts h2 {
+    text-align: center;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 编辑和删除按钮 */
+.post-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #FF5733;
+    color: white;
+}
+
+.not-logged-in h2 {
+    color: red;
+}
+
+.login-btn {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}

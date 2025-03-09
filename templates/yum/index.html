@@ -4,10 +4,36 @@
 
 {% block title_block %}
     Homepage
+
+{% endblock %}
+
+{% block extra_file_block %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 {% endblock %}
 
 
-
 {% block body_block %}
-    <h1>this is index page.</h1>
+    <div class="content">
+        <ul class="post-list">
+            {% if posts %}
+                {% for post in posts %}
+                <li class="post-item">
+                    <a href="{% url 'yum:detail' recipe_id=post.recipe_id %}">
+                        {% if post.images %}
+                            <img src="{{ post.images.url }}" alt="Post Image" class="post-thumbnail">
+                        {% else %}
+                            <img src="{% static 'images/default.jpg' %}" alt="Default Image" class="post-thumbnail">
+                        {% endif %}
+                        <h2>{{ post.title }}</h2>
+                        <p><strong>Author:</strong>{{ post.author.user.username }}</p>
+                        <p><strong>Posted:</strong>{{ post.formatted_time }}</p>
+                        <p><strong>Comments:</strong>{{ post.comments_count }}</p>
+                    </a>
+                </li>
+                {% endfor %}
+            {% else %}
+                <h2 style="text-align: center;">No posts currently.</h2>
+            {% endif %}
+        </ul>
+    </div>
 {% endblock %}

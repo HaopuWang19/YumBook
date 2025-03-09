@@ -1,0 +1,24 @@
+{% extends 'yum/base.html' %}
+{% load static %}
+
+
+{% block title_block %}
+    Register
+{% endblock %}
+
+{% block extra_file_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block body_block %}
+    <div>
+        <h1 style="text-align: center">Register</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <p>Already have an account? <a href="{% url 'yum:login' %}">Login here</a></p>
+    </div>
+{% endblock %}
