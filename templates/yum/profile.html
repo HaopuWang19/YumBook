@@ -12,11 +12,11 @@
 
 {% block body_block %}
     <div class="profile-container">
-        {% if user_profile %}
+        {% if user.is_authenticated %}
 
             <div class="profile">
-                <p class="username">{{ user_profile.user.username }}</p>
-                <p class="email">{{ user_profile.user.email }}</p>
+                <p class="username">{{ user.username }}</p>
+                <p class="email">{{ user.email }}</p>
             </div>
 
             <hr class="divider">

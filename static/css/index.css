@@ -1,20 +1,117 @@
+/* 让 `post-meta` 和 `post-comments` 并排 */
+.post-footer {
+    display: flex;  /* ✅ 让 meta 和 comments 在一行 */
+    justify-content: space-between;  /* ✅ 左右对齐 */
+    align-items: center;  /* ✅ 确保垂直对齐 */
+    width: 100%;
+}
+
+/* 让 `post-item` 高度足够 */
+.post-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 0;
+    height: 160px;  /* ✅ 增加高度，避免内容被遮挡 */
+    transition: transform 0.2s ease-in-out;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.post-item:hover {
+    transform: scale(1.02);
+}
+
+/* `.post-link` 控制内部 `flex` 布局 */
+.post-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    padding: 5px;
+}
+
+/* 左侧图片 */
+.post-thumbnail-container {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+}
+
+.post-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 右侧内容 */
+.post-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding-left: 15px;
+    height: 100%;
+}
+
+/* 标题 */
+.post-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+
+/* `post-meta` + `post-comments` 在一行 */
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+/* `post-meta` (左) */
+.post-meta {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* `post-comments` (右) */
+.post-comments {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 10px;
+}
+
+.comment-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.comment-count {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
 .post-list {
-    list-style: none;
     padding: 0;
 }
 
-.post-item {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+.content {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-.post-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 5px;
 }

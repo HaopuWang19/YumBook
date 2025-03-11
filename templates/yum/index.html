@@ -17,23 +17,42 @@
         <ul class="post-list">
             {% if posts %}
                 {% for post in posts %}
-                <li class="post-item">
-                    <a href="{% url 'yum:detail' recipe_id=post.recipe_id %}">
-                        {% if post.images %}
-                            <img src="{{ post.images.url }}" alt="Post Image" class="post-thumbnail">
-                        {% else %}
-                            <img src="{% static 'images/default.jpg' %}" alt="Default Image" class="post-thumbnail">
-                        {% endif %}
-                        <h2>{{ post.title }}</h2>
-                        <p><strong>Author:</strong>{{ post.author.user.username }}</p>
-                        <p><strong>Posted:</strong>{{ post.formatted_time }}</p>
-                        <p><strong>Comments:</strong>{{ post.comments_count }}</p>
-                    </a>
-                </li>
+                    <li class="post-item">
+                        <a href="{% url 'yum:detail' recipe_id=post.recipe_id %}" class="post-link">
+
+                            <div class="post-thumbnail-container">
+                                <img src="{{ post.first_image_url }}" alt="Recipe Image" class="post-thumbnail">
+                            </div>
+
+
+                            <div class="post-content">
+                                <h2 class="post-title">{{ post.title }}</h2>
+
+                                <div class="post-footer">
+                                    <div class="post-meta">
+                                        <span class="post-time">{{ post.formatted_time }}</span>  |
+                                        {% for cuisine in post.cuisine.all %}
+                                            <span class="post-cuisine">{{ cuisine }}</span>
+                                            {% if not forloop.last %} · {% endif %}
+                                        {% endfor %}
+                                        {% for meal in post.meal_type.all %}
+                                            · <span class="post-meal">{{ meal }}</span>
+                                        {% endfor %}
+                                    </div>
+
+                                    <div class="post-comments">
+                                        <img src="{% static 'images/comment.svg' %}" alt="Comments" class="comment-icon">
+                                        <span class="comment-count">{{ post.comments_count }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
                 {% endfor %}
             {% else %}
                 <h2 style="text-align: center;">No posts currently.</h2>
             {% endif %}
         </ul>
     </div>
+
 {% endblock %}

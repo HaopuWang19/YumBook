@@ -4,31 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4766188-796e-42c6-b2b7-105a05c43582" name="Changes" comment="base style commit 2">
-      <change afterPath="$PROJECT_DIR$/static/css/addRecipe.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/detail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/profile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/yum/detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/yum/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/yum/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yum/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b4766188-796e-42c6-b2b7-105a05c43582" name="Changes" comment="default image">
+      <change afterPath="$PROJECT_DIR$/populate_recipes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/recipes.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup_init_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/detail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YumBook/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/YumBook/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/addRecipe.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/addRecipe.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/yum/addFood.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/yum/addRecipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/yum/addRecipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/yum/addRecipe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/yum/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/yum/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/yum/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/yum/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/yum/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/yum/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/yum/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/yum/privacy.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/yum/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/yum/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yum/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/yum/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yum/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/yum/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yum/migrations/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yum/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/yum/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yum/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/yum/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yum/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yum/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +72,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "Python.populate_recipes (1).executor": "Run",
+    "Python.populate_yum.executor": "Run",
+    "Python.setup_init_data.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -90,7 +89,76 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.populate_recipes (1)">
+    <configuration name="populate_recipes (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="YumBook" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/populate_recipes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="populate_recipes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="YumBook" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\Workspace\Pycharm_Workspace\YumBook\populate_recipes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="setup_init_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="YumBook" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup_init_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="YumBook" type="Python.DjangoServer" factoryName="Django server">
       <module name="YumBook" />
       <option name="ENV_FILES" value="" />
@@ -115,6 +183,13 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.populate_recipes (1)" />
+        <item itemvalue="Python.setup_init_data" />
+        <item itemvalue="Python.populate_recipes" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -135,7 +210,8 @@
       <workItem from="1739974391374" duration="3660000" />
       <workItem from="1739986764138" duration="3659000" />
       <workItem from="1740110386639" duration="248000" />
-      <workItem from="1741188915018" duration="37749000" />
+      <workItem from="1741188915018" duration="38619000" />
+      <workItem from="1741661045307" duration="31963000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized.">
       <option name="closed" value="true" />
@@ -169,7 +245,23 @@
       <option name="project" value="LOCAL" />
       <updated>1741377248684</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="basic logical functions completed ,1">
+      <option name="closed" value="true" />
+      <created>1741484105045</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741484105045</updated>
+    </task>
+    <task id="LOCAL-00006" summary="default image">
+      <option name="closed" value="true" />
+      <created>1741484158420</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741484158420</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +272,13 @@
     <MESSAGE value="project uplaod 1" />
     <MESSAGE value="base style commit 1" />
     <MESSAGE value="base style commit 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="base style commit 2" />
+    <MESSAGE value="basic logical functions completed ,1" />
+    <MESSAGE value="default image" />
+    <option name="LAST_COMMIT_MESSAGE" value="default image" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/YumBook$populate_recipes__1_.coverage" NAME="populate_recipes (1) Coverage Results" MODIFIED="1741693552135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/YumBook$populate_yum.coverage" NAME="populate_yum Coverage Results" MODIFIED="1741689551221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/YumBook$setup_init_data.coverage" NAME="setup_init_data Coverage Results" MODIFIED="1741693050769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

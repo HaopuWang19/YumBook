@@ -1,9 +1,31 @@
 from django import forms
 from yum.models import *
 
+class MultipleFileInput(forms.ClearableFileInput):
+    allow_multiple_selected = True
+
+
+class MultipleFileField(forms.FileField):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault("widget", MultipleFileInput())
+        super().__init__(*args, **kwargs)
+
+    def clean(self, data, initial=None):
+        single_file_clean = super().clean
+        if isinstance(data, (list, tuple)):
+            result = [single_file_clean(d, initial) for d in data]
+        else:
+            result = single_file_clean(data, initial)
+        return result
+
+
+class FileFieldForm(forms.Form):
+    file_field = MultipleFileField()
+
+
 class UserForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
-    confirm_password = forms.CharField(widget=forms.PasswordInput())
+    password = forms.CharField(widget=forms.PasswordInput(), label="Password")
+    confirm_password = forms.CharField(widget=forms.PasswordInput(), label="Confirm Password")
 
     class Meta:
         model = User
@@ -16,9 +38,14 @@ class UserForm(forms.ModelForm):
 
         if password and confirm_password and password != confirm_password:
             raise forms.ValidationError("Passwords don't match")
-
         return cleaned_data
 
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.set_password(self.cleaned_data["password"])
+        if commit:
+            user.save()
+        return user
 
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'placeholder': 'username'}))
@@ -56,10 +83,7 @@ class RecipeForm(forms.ModelForm):
         error_messages={'required': 'description is required'}
     )
 
-    images = forms.FileField(
-        widget=forms.ClearableFileInput(attrs={'multiple': False}),
-        required=False
-    )
+    images = MultipleFileField(required=False)
 
     class Meta:
         model = Recipe
@@ -75,3 +99,5 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['text']
+
+

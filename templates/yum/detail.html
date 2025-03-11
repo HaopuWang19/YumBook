@@ -8,24 +8,45 @@
 
 {% block extra_file_block %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+    <script type="text/javascript" src="{% static 'js/detail.js' %}"></script>
 {% endblock %}
 
 {% block body_block %}
-    <h1>{{ recipe.title }}</h1>
+
+    <h1 class="title">{{ recipe.title }}</h1>
+
+    <div class="recipe-meta">
+        <p class="author"><strong>Created by</strong> {{ recipe.author.username }}</p>
+        <p class="timestamp">{{ formatted_time }}</p>
+    </div>
+
     <div class="recipe-info">
-        <p><strong>Author:</strong> {{ recipe.author.user.username }}</p>
-        <p><strong>Posted:</strong>{{ formatted_time }}</p>
-        <p><strong>Cuisine:</strong>{% for c in recipe.cuisine.all %}{{ c.name }}{% endfor %}</p>
-        <p><strong>Meal Type:</strong>{% for m in recipe.meal_type.all %}{{ m.name }}{% endfor %}</p>
-        <p><strong>Ingredients:</strong>{{ recipe.ingredients }}</p>
-        <p><strong>Description & Steps:</strong>{{ recipe.description }}</p>
+        <p><strong>Cuisine: </strong>
+            {% for c in recipe.cuisine.all %}
+                {{ c.name }}{% if not forloop.last %} · {% endif %}
+            {% endfor %}
+        </p>
+        <p><strong>Meal Type: </strong>
+            {% for m in recipe.meal_type.all %}
+                {{ m.name }}{% if not forloop.last %} · {% endif %}
+            {% endfor %}
+        </p>
+        <p><strong>Ingredients: </strong>{{ recipe.ingredients }}</p>
+        <p><strong>Description & Steps: </strong></p>
+        <p>{{ recipe.description }}</p>
 
         <div class="recipe-images">
-            {% if recipe.images %}
-                <img src="{{ recipe.images.url }}" alt="Recipe Image">
-            {% else %}
+            {% for img in recipe.images.all %}
+                <img src="{{ img.image.url }}" alt="Recipe Image" class="preview-image"
+                onclick="openModal('{{ img.image.url }}')">
+            {% empty %}
                 <img src="{% static 'images/default.jpg' %}" alt="Default Image">
-            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImg" alt="zoom in">
         </div>
     </div>
 
@@ -33,7 +54,7 @@
 
     <h2>Comments</h2>
     {% if user.is_authenticated %}
-        <form method="post">
+        <form method="post" class="comment-form">
             {% csrf_token %}
             {{ comment_form.text }}
             <button type="submit">Post Comment</button>
@@ -46,12 +67,17 @@
 
     <ul class="comment-list">
         {% for comment in comments %}
-            <li>
-                <p><strong>{{ comment.author.user.username }}</strong>{{ comment.created_at|date:"Y-m-d H:i" }}</p>
-                <p>{{ comment.text }}</p>
+            <li class="comment-item">
+                <div class="comment-meta">
+                    <p class="comment-author"><strong>{{ comment.author.username }}</strong></p>
+                    <p class="comment-time">{{ comment.created_at|date:"Y-m-d H:i" }}</p>
+                </div>
+                <p class="comment-text">{{ comment.text }}</p>
+                <hr>
             </li>
         {% empty %}
             <li>No comments yet.</li>
         {% endfor %}
     </ul>
+
 {% endblock %}
