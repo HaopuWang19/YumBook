@@ -1,5 +1,5 @@
 .profile-container {
-    width: 60%;
+    width: 80%;
     margin: 20px auto;
     padding: 20px;
     background-color: #f9f9f9;
@@ -7,18 +7,27 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 个人信息部分 */
+
 .profile {
-    height: 100px; /* 固定高度 */
+
     display: flex;
     flex-direction: column;
     align-items: center; /* 水平居中 */
     justify-content: center; /* 垂直居中 */
-    font-size: 18px;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
-/* 分割线 */
+.username{
+    font-size: 2em;
+}
+
+.email{
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
 .divider {
     border: none;
     height: 2px;
@@ -26,7 +35,14 @@
     margin: 20px 0;
 }
 
-/* 帖子列表 */
+.my-recipes{
+    text-align: left;
+    color: #FFDE59;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+    margin-left: 8px;
+}
+
+
 .posts h2 {
     text-align: center;
 }
@@ -42,6 +58,17 @@
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ddd;
+}
+
+.post-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.post-item a:hover {
+    transform: scale(1.02);
 }
 
 .post-title {
@@ -60,6 +87,8 @@
     text-decoration: none;
     border-radius: 5px;
     font-size: 14px;
+    width: 50px;
+    text-align: center;
 }
 
 .edit-btn {

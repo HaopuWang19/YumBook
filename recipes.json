@@ -1,0 +1,67 @@
+[
+  {
+    "model": "yum.recipe",
+    "pk": 1,
+    "fields": {
+      "author": 1,
+      "title": "Spicy Sichuan Noodles",
+      "ingredients": "Noodles, Chili Oil, Sichuan Peppercorns, Garlic, Scallions",
+      "description": "Delicious and spicy noodles typical of Sichuan cuisine. Enjoy a fiery kick with every bite.",
+      "post_date": "2023-06-01T12:00:00Z",
+      "cuisine": [1],
+      "meal_type": [2]
+    }
+  },
+  {
+    "model": "yum.recipe",
+    "pk": 2,
+    "fields": {
+      "author": 1,
+      "title": "Classic American Burger",
+      "ingredients": "Beef Patty, Bun, Lettuce, Tomato, Cheese, Pickles",
+      "description": "A juicy burger with all the classic fixings, served with crispy fries.",
+      "post_date": "2023-06-02T15:30:00Z",
+      "cuisine": [2],
+      "meal_type": [2, 5]
+    }
+  },
+  {
+    "model": "yum.recipe",
+    "pk": 3,
+    "fields": {
+      "author": 1,
+      "title": "Elegant French Salad",
+      "ingredients": "Mixed Greens, Walnuts, Goat Cheese, Vinaigrette",
+      "description": "A light and refreshing salad with a French twist, perfect for lunch or a starter.",
+      "post_date": "2023-06-03T11:15:00Z",
+      "cuisine": [3],
+      "meal_type": [1, 5]
+    }
+  },
+  {
+    "model": "yum.recipe",
+    "pk": 4,
+    "fields": {
+      "author": 1,
+      "title": "Assorted Japanese Sushi Platter",
+      "ingredients": "Sushi Rice, Nori, Fresh Fish, Avocado, Cucumber",
+      "description": "A beautifully arranged sushi platter offering a taste of Japan.",
+      "post_date": "2023-06-04T18:00:00Z",
+      "cuisine": [4],
+      "meal_type": [2, 4]
+    }
+  },
+  {
+    "model": "yum.recipe",
+    "pk": 5,
+    "fields": {
+      "author": 1,
+      "title": "Korean BBQ Feast",
+      "ingredients": "Marinated Beef, Pork, Vegetables, Kimchi, Rice",
+      "description": "Enjoy a Korean BBQ feast with a variety of grilled meats and traditional side dishes.",
+      "post_date": "2023-06-05T20:30:00Z",
+      "cuisine": [5],
+      "meal_type": [2, 4]
+    }
+  }
+]
