@@ -97,8 +97,17 @@ def logout_page(request):
 def detail(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
     comments = Comment.objects.filter(recipe_id=recipe).order_by('-created_at')
-    comment_form = CommentForm()
 
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.recipe_id = recipe
+            comment.save()
+            return redirect('yum:detail', recipe_id=recipe.recipe_id)
+    else:
+        comment_form = CommentForm()
     context = {'recipe': recipe,
                'comments': comments,
                'comment_form': comment_form,

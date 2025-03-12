@@ -7,7 +7,6 @@ django.setup()
 from yum.models import User, Cuisine, MealType
 
 
-# ✅ 创建测试用户
 def create_test_users():
     users_data = [
         {'username': 'testuser1', 'email': 'test1@example.com', 'password': 'test123'},
@@ -23,7 +22,6 @@ def create_test_users():
             print(f'🟢 Created test user: {user.username}')
 
 
-# ✅ 预创建 `Cuisine` 和 `MealType`
 def setup_data():
     cuisines = ['Chinese Dish', 'American Dish', 'French Dish', 'Japanese Dish', 'Korean Dish']
     meal_types = ['Breakfast', 'Lunch', 'Afternoon Tea', 'Dinner', 'Dessert']
