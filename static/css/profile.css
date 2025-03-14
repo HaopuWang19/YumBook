@@ -12,8 +12,8 @@
 
     display: flex;
     flex-direction: column;
-    align-items: center; /* 水平居中 */
-    justify-content: center; /* 垂直居中 */
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -76,7 +76,7 @@
     font-weight: bold;
 }
 
-/* 编辑和删除按钮 */
+
 .post-actions {
     display: flex;
     gap: 10px;

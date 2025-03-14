@@ -67,10 +67,10 @@ body{
 
 .content-body {
     width: 80%;
-    margin: 0 auto; /* 左右自动居中 */
-    background-color: #f9f9f9; /* 浅色背景，增强可视效果 */
-    padding: 20px; /* 增加内边距 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 可选：增加阴影 */
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -80,8 +80,8 @@ body{
 }
 
 #page-foot-base {
-    text-align: center; /* 让页脚文字和链接居中 */
-    margin-top: 20px; /* 让页脚与内容区隔开 */
+    text-align: center;
+    margin-top: 20px;
 }
 
 .footer-links {
@@ -95,5 +95,5 @@ body{
 
 .footer-links li a{
     text-decoration: none;
-    color: #007bff; /* 让链接有颜色 */
+    color: #007bff;
 }
