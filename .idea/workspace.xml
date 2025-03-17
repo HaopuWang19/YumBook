@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4766188-796e-42c6-b2b7-105a05c43582" name="Changes" comment="beauti 4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-    </list>
+    <list default="true" id="b4766188-796e-42c6-b2b7-105a05c43582" name="Changes" comment="final 1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,7 +193,7 @@
       <workItem from="1741942741906" duration="894000" />
       <workItem from="1742043085604" duration="654000" />
       <workItem from="1742110769227" duration="2810000" />
-      <workItem from="1742187210080" duration="856000" />
+      <workItem from="1742187210080" duration="1277000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized.">
       <option name="closed" value="true" />
@@ -278,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741943591478</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="final 1">
+      <option name="closed" value="true" />
+      <created>1742188560582</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742188560582</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +300,8 @@
     <MESSAGE value="beauti 2" />
     <MESSAGE value="beauti 3" />
     <MESSAGE value="beauti 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="beauti 4" />
+    <MESSAGE value="final 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="final 1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/YumBook$populate_recipes__1_.coverage" NAME="populate_recipes (1) Coverage Results" MODIFIED="1741693552135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
