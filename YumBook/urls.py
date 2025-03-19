@@ -26,4 +26,18 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('yum/', include('yum.urls')),
 
-] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
+# comment this to enable production env.
+
+'''
+    Add below to work in production env.
+'''
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+elif getattr(settings, 'FORCE_SERVE_STATIC', False):
+    settings.DEBUG = True
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    settings.DEBUG = False

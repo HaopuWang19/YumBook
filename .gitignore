@@ -2,4 +2,5 @@
 __pycache__/
 pytest.ini
 YumBook/__pycache__/
+yum/__pycache__/
 .venv/

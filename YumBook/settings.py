@@ -16,7 +16,10 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
+'''
+    Switch below STATIC_DIR to comment to be in production env.
+'''
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
@@ -26,9 +29,12 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = "django-insecure-%a#w+emej^c5g6sg@b)-nhw^^bmgxfnm-td@&f^rp=s--!jqib"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+'''
+    Add IP or DNS name in ALLOWED_HOSTS in production env.
+'''
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -121,8 +127,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [STATIC_DIR, ]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+'''
+    Umcomment STATIC_ROOT and comment STATICFILES_DIRS 
+    to work in production env.
+'''
+# STATICFILES_DIRS = [STATIC_DIR, ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = "/media/"
 
