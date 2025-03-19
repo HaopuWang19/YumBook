@@ -1,46 +1,56 @@
- .login-container {
-      width: 600px;
-      margin: 20px auto;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-  }
+/* Container for the login form: sets a fixed width, centers it on the page, and adds padding and border styling */
+.login-container {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
 
-  .login-form .form-group {
-      margin-bottom: 15px;
-  }
-  .login-form label {
-      display: block;
-      text-align: left;
-      margin-bottom: 5px;
-      font-weight: bold;
-  }
-  .login-form input {
-      width: 100%;
-      padding: 8px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-  }
+/* Margin for each form group within the login form */
+.login-form .form-group {
+    margin-bottom: 15px;
+}
 
-  .login-btn {
-      width: 100%;
-      padding: 10px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-  }
-  .login-btn:hover {
-      background-color: #218838;
-  }
+/* Styling for labels in the login form: block display, left-aligned, with bottom margin and bold font */
+.login-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
 
-  .error-message {
-      color: red;
-      font-weight: bold;
-      margin-bottom: 10px;
-      text-align: center;
-  }
+/* Styling for input fields in the login form: full width, padded, with border and rounded corners */
+.login-form input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Styling for the login button: full width, padded, with a green background and rounded corners */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Hover effect for the login button: changes the background color to a darker green */
+.login-btn:hover {
+    background-color: #218838;
+}
+
+/* Styling for error messages: red, bold, centered text with margin below */
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
