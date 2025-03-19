@@ -1,10 +1,13 @@
 from django import forms
 from yum.models import *
 
+
+# Custom widget for selecting multiple files.
 class MultipleFileInput(forms.ClearableFileInput):
     allow_multiple_selected = True
 
 
+# Custom file field that uses the custom widget and cleans multiple files.
 class MultipleFileField(forms.FileField):
     def __init__(self, *args, **kwargs):
         kwargs.setdefault("widget", MultipleFileInput())
@@ -19,10 +22,12 @@ class MultipleFileField(forms.FileField):
         return result
 
 
+# Form to handle file uploads using the custom file field.
 class FileFieldForm(forms.Form):
     file_field = MultipleFileField()
 
 
+# User registration/update form with password confirmation.
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput(), label="Password")
     confirm_password = forms.CharField(widget=forms.PasswordInput(), label="Confirm Password")
@@ -47,11 +52,13 @@ class UserForm(forms.ModelForm):
             user.save()
         return user
 
+
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'placeholder': 'username'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'password'}))
 
 
+# Form for creating or editing a recipe.
 class RecipeForm(forms.ModelForm):
     title = forms.CharField(
         max_length=100,
@@ -90,6 +97,7 @@ class RecipeForm(forms.ModelForm):
         fields = ['title', 'cuisine', 'meal_type', 'ingredients', 'description', 'images']
 
 
+# Form for submitting comments on a recipe.
 class CommentForm(forms.ModelForm):
     text = forms.CharField(
         widget=forms.Textarea(attrs={'placeholder': 'Write your comment'}),
@@ -99,5 +107,3 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['text']
-
-

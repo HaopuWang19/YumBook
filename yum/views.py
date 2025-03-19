@@ -1,18 +1,15 @@
 from datetime import timedelta
-
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect, get_object_or_404
 from django.templatetags.static import static
 from django.utils.timezone import now
-
 from yum.forms import *
 from yum.models import *
 
 
-
-
+# Homepage view: lists recipes with images, comments count, and formatted time.
 def index(request):
     posts = Recipe.objects.all().order_by('-post_date')
     for post in posts:
@@ -29,6 +26,7 @@ def index(request):
     return render(request, 'yum/index.html', context)
 
 
+# Static pages.
 def about(request):
     return render(request, 'yum/about.html', context={})
 
@@ -40,6 +38,8 @@ def privacy(request):
 def contact(request):
     return render(request, 'yum/contact.html', context={})
 
+
+# Add a new recipe; only accessible to logged in users.
 @login_required
 def add_recipe(request):
     if request.method == "POST":
@@ -55,6 +55,7 @@ def add_recipe(request):
     return render(request, 'yum/addRecipe.html', context={'form': form})
 
 
+# Display a user's profile and their recipes.
 def profile(request, user_id):
     user = User.objects.get(pk=user_id)
     posts = Recipe.objects.filter(author=user).order_by('-post_date')
@@ -62,6 +63,7 @@ def profile(request, user_id):
     return render(request, 'yum/profile.html', context)
 
 
+# User login view.
 def login_page(request):
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
@@ -75,6 +77,7 @@ def login_page(request):
     return render(request, 'yum/login.html', context)
 
 
+# User registration view.
 def register(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
@@ -88,12 +91,14 @@ def register(request):
     return render(request, 'yum/register.html', context)
 
 
+# User logout view.
 def logout_page(request):
     print("logging out user:", request.user)
     logout(request)
     return redirect('/')
 
 
+# Recipe detail view with comment submission.
 def detail(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
     comments = Comment.objects.filter(recipe_id=recipe).order_by('-created_at')
@@ -115,6 +120,7 @@ def detail(request, recipe_id):
     return render(request, 'yum/detail.html', context)
 
 
+# Helper function to format the recipe post time.
 def format_time(created_at):
     delta = now() - created_at
     if delta < timedelta(days=1):
@@ -127,6 +133,7 @@ def format_time(created_at):
         return created_at.strftime("%Y-%m-%d")
 
 
+# Edit an existing recipe; allows adding additional images.
 @login_required
 def edit_recipe(request, recipe_id):
     recipe = get_object_or_404(Recipe, recipe_id=recipe_id)
@@ -147,6 +154,8 @@ def edit_recipe(request, recipe_id):
     context = {'form': form, 'is_edit': True, 'recipe': recipe}
     return render(request, 'yum/addRecipe.html', context)
 
+
+# Delete a recipe; only the recipe's author can delete it.
 def delete_recipe(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
 

@@ -32,8 +32,8 @@ class MealType(models.Model):
 class Recipe(models.Model):
     recipe_id = models.AutoField(primary_key=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    cuisine = models.ManyToManyField(Cuisine)
-    meal_type = models.ManyToManyField(MealType)
+    cuisine = models.ManyToManyField(Cuisine)   # A recipe can belong to multiple cuisines.
+    meal_type = models.ManyToManyField(MealType)    # A recipe can be suitable for multiple meal types.
     ingredients = models.TextField(max_length=200)
     title = models.TextField(max_length=100)
     post_date = models.DateTimeField(auto_now_add=True)
@@ -48,6 +48,7 @@ class Recipe(models.Model):
 class Comment(models.Model):
     comment_id = models.AutoField(primary_key=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    # Link to Recipe with related_name 'comments'
     recipe_id = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='comments')
     created_at = models.DateTimeField(auto_now_add=True)
     text = models.TextField(max_length=200)
@@ -56,5 +57,6 @@ class Comment(models.Model):
         return self.text
 
 class RecipeImage(models.Model):
+    # Link image to Recipe with related_name 'images'
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to='recipe_images/')
